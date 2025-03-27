@@ -1,0 +1,54 @@
+name: Deploy secret-kitchen
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build_and_test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build project
+        env: 
+          VITE_API_URL: "https://www.corenzohouse.com/api"
+          VITE_PUBLIC_URL: "https://www.corenzohouse.com"
+          VITE_LOCAL_URL: "https://www.corenzohouse.com"
+          VITE_CORENZO_URL: "https://api.memesition.com/corenzo"
+          VITE_CORENZO_URL_PUBLIC: "https://api.memesition.com/corenzo"
+          VITE_VAPID_PUBLIC_KEY: ${{secrets.VITE_VAPID_PUBLIC_KEY}}
+          VITE_GMAP_MAP_ID: ${{secrets.VITE_GMAP_MAP_ID}}
+          VITE_GMAP_API_KEY: ${{secrets.VITE_GMAP_API_KEY}}
+          VITE_JWT_SECRET_KEY: ${{secrets.VITE_JWT_SECRET_KEY}}
+        run: pnpm build
+
+      - name: Deploy via Rsync
+        uses: burnett01/rsync-deployments@master
+        with:
+          switches: -avz --delete --exclude='.git' --exclude='.github' --exclude='.gitignore' --exclude='vite.config.ts' --exclude='tsconfig.json' --exclude='README.md' --exclude='postcss.config.js' --exclude='.eslintrc.cjs' --exclude='node_modules' --exclude='.env.*'
+          path: ./dist/*
+          remote_path: /var/www/html/Web/secret-kitchen.net
+          remote_host: ${{ secrets.SERVER_HOST }}
+          remote_user: ${{ secrets.SERVER_USER }}
+          remote_key: ${{ secrets.SERVER_SSH_KEY }}

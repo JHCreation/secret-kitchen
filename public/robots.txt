@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# Certain social media sites are whitelisted to allow crawlers to access page markup when links to google.com/imgres* are shared. To learn more, please contact images-robots-whitelist@google.com.
+User-agent: Twitterbot
+Allow: /
+Disallow: /admin/
+
+User-agent: facebookexternalhit
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://www.corenzohouse.com/sitemap.xml
