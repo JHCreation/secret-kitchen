@@ -13,7 +13,11 @@
     // { msg: '기본적으로 잔 교체가 되지 않습니다. 양해 부탁드립니다.', detail: ['다음 드실 주류(와인,맥주)나 물로 린싱 추천드립니다'] },
     // { msg: '바틀 테이크아웃시 할인 적용됩니다.', detail: ['와인 -8,000 / 맥주 -1,500 / 위스키 -25,000'] },
     // { msg: '웨이팅시 이용시간을 3시간으로 제한합니다.', detail: '' },
-    { msg: '콜키지 서비스 안내', detail: ['매장내 와인 1병이상 구매시 가능합니다.', '최대 와인 1병만 가능합니다.'] },
+    { 
+      msg: '콜키지 서비스 안내', 
+      detail: ['매장내 와인 1병이상 구매시 가능합니다.', '최대 와인 1병만 가능합니다.', '비용은 1병당 20,000원 입니다.'], 
+      type: 'accordion' 
+    },
     { msg: '대기 손님이 있을때, 2시간으로 이용시간 제한이 있습니다.' },
   ]
 </script>
@@ -123,15 +127,33 @@
           
           <!-- <Check size={14} class="text-red-500 mt-0. mr-1"/> -->
           <div class="leading-3 py-1">
-            {@render wrap(notice.msg)}
-            <!-- <span class="text-xs ">{notice.msg}</span> -->
-            {#if notice?.detail }
-              <ul class="list-disc list-inside">
-                {#each notice?.detail as detail}
-                  <li class="text-1.5xs mt-2 text-slate-500">{detail}</li>
-                {/each}
-              </ul>
+            {#if notice?.type == 'accordion'}
+              <Accordion.Root type="single" class="">
+                <Accordion.Item value="item-1" class="border-0" >
+                  <Accordion.Trigger class="inline-flex justify-start py-0 hover:no-underline">{@render wrap(notice.msg)}</Accordion.Trigger>
+                  <Accordion.Content class="">
+                    {#if notice?.detail }
+                      <ul class="list-disc list-inside py-1.5">
+                        {#each notice?.detail as detail}
+                          <li class="text-1.5xs my-1 text-slate-500">{detail}</li>
+                        {/each}
+                      </ul>
+                    {/if}
+                  </Accordion.Content>
+                </Accordion.Item>
+              </Accordion.Root>
+            {:else}
+              {@render wrap(notice.msg)}
+              <!-- <span class="text-xs ">{notice.msg}</span> -->
+              {#if notice?.detail }
+                <ul class="list-disc list-inside">
+                  {#each notice?.detail as detail}
+                    <li class="text-1.5xs mt-2 text-slate-500">{detail}</li>
+                  {/each}
+                </ul>
+              {/if}
             {/if}
+            
             <!-- {#if i == 2 }
             <Accordion.Root type="single" class="">
               <Accordion.Item value="item-1" class="border-0" >

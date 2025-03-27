@@ -18,7 +18,7 @@
 	)}
 	{...restProps}
 >
-	<div class="pb-4 pt-0">
+	<div class="">
 		{@render children?.()}
 	</div>
 </AccordionPrimitive.Content>
