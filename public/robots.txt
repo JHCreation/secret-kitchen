@@ -11,4 +11,4 @@ User-agent: facebookexternalhit
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://www.corenzohouse.com/sitemap.xml
+Sitemap: https://www.secret-kitchen.net/sitemap.xml
