@@ -18,6 +18,7 @@ export const makeOrderList= ({cartStateList,  tid})=> {
         key: menuType[item.key].name,
         price: item.payPrice,
         qty: item.qty,
+        option: item.option
       }
     })
 

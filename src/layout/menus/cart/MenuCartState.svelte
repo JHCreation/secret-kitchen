@@ -63,7 +63,7 @@
       }
       
       if( !currentOg ) {
-        console.log(order_id, $orderId)
+        // console.log(order_id, $orderId)
         order_id= `${currentDate.format('YYYYMMDD')}_${generateShortId(16)}`
         orderGroupParam = {
           order_id,

@@ -27,7 +27,7 @@
   	const location= useLocation()
 
 
-	const secretKey = import.meta.env.VITE_JWT_SECRET_KEY; // 서버와 동일한 비밀키 사용
+	/* const secretKey = import.meta.env.VITE_JWT_SECRET_KEY; // 서버와 동일한 비밀키 사용
 	const payload = {
 		userId: 123,
 		iat: Math.floor(Date.now() / 1000), // 발행 시간 (Unix Timestamp)
@@ -41,13 +41,14 @@
 				console.log("🔍 디코딩된 데이터:", decodedPayload);
 			}
 		});
-	});
+	}); */
 
 	
 	
 	onMount( async ()=> {
 		$inspect($noPush)
 		const parsed:any = queryString.parse(window.location.search);
+		console.log(parsed, parsed?.tid)
 		if( parsed && parsed?.tid) {
 			
 
