@@ -113,7 +113,7 @@
           {#if type }
             <div class="overflow-x-auto w-full flex gap-0.5">
               {#each type as type}
-                <Badge class={`text-3xs text-nowrap px-1 py-0 md:py-0.5 ${wineType[type].bgclass}`}>{wineType[type].name}</Badge>
+                <Badge class={`text-3xs font-medium text-nowrap px-1 py-0 md:py-0.5 ${wineType[type].bgclass}`}>{wineType[type].name}</Badge>
               {/each}
             </div>
           {/if}

@@ -75,10 +75,10 @@
           >
             
             <div class="splide__arrows w-full flex justify-between items-center">
-              <Button size={'sm'} class="splide__arrow splide__arrow--prev bg-transparent border-slate-600 border text-slate-600 hover:text-slate-200 p-1.5 md:p-2.5 h-auto">
+              <Button size={'sm'} class="splide__arrow splide__arrow--prev bg-transparent border-slate-600 border text-slate-600 hover:text-slate-200 p-1.5 md:p-2.5 h-auto touch-manipulation">
                 <MoveLeft />
               </Button>
-              <Button size={'sm'} class="splide__arrow splide__arrow--next bg-transparent border-slate-600 border text-slate-600 hover:text-slate-200 p-1.5 md:p-2.5 h-auto">
+              <Button size={'sm'} class="splide__arrow splide__arrow--next bg-transparent border-slate-600 border text-slate-600 hover:text-slate-200 p-1.5 md:p-2.5 h-auto touch-manipulation">
                 <MoveRight />
               </Button>
             </div>
