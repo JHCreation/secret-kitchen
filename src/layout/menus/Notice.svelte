@@ -58,7 +58,7 @@
         <li class="flex flex-col pb-3">
           {@render name('영업시간')}
           <div class="font-bold">
-            {@render wrap('화-목: 17:00 - 01:00, 일: 18:00 - 23:00')}
+            {@render wrap('화-목,일: 17:00 - 01:00')}
             {@render wrap('금-토: 17:00 - 02:00 ( 다음날 휴일인 날도 동일 )')}
           </div>
         </li>
