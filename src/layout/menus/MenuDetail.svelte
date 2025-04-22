@@ -31,7 +31,10 @@
     else {
       navigate($location.pathname)
     }
-    fixSafariNavBug($bottomNavEl)
+    setTimeout(e=> {
+      fixSafariNavBug($bottomNavEl)
+    }, 1000)
+    
   }
 
   const saveCart= (data)=> (e)=> {
@@ -39,9 +42,6 @@
     onSave({cartCurrent: {key, id}, count:1})
     onClose(false)
   }
-  onMount(()=> {
-    fixSafariNavBug($bottomNavEl)
-  })
 </script>
 
 
