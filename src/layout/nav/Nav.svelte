@@ -35,11 +35,11 @@
     nav.style.display = '';
   }
 
-  onMount(() => {
-    bottomNavEl.set(nav)
-    window.addEventListener('resize', fixSafariNavBug);
-    // document.body.appendChild(nav);
-  });
+  // onMount(() => {
+  //   bottomNavEl.set(nav)
+  //   window.addEventListener('resize', fixSafariNavBug);
+  //   // document.body.appendChild(nav);
+  // });
 </script>
 
 
