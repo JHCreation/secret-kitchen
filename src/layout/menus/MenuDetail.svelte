@@ -31,9 +31,10 @@
     else {
       navigate($location.pathname)
     }
-    // setTimeout(e=> {
-    //   fixSafariNavBug($bottomNavEl)
-    // }, 1000)
+    setTimeout(e=> {
+      // fixSafariNavBug($bottomNavEl)
+      document.body.appendChild($bottomNavEl);
+    }, 1000)
     
   }
 
