@@ -8,10 +8,10 @@ const isProduction = process.env.NODE_ENV === 'production';
 export default defineConfig({
   plugins: [
     svelte(),
-    isProduction && strip({
-      include: "**/*.(svelte|js|ts)",
-      // functions: ["console.*", "assert.*"]
-    }),
+    // isProduction && strip({
+    //   include: "**/*.(svelte|js|ts)",
+    //   functions: ["console.*", "assert.*"]
+    // }),
   ],
   build: {
     minify: 'esbuild'
