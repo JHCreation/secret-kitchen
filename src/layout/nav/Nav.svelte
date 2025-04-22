@@ -14,8 +14,21 @@
   import { AlignJustify } from "lucide-svelte";
   import MenuDetail from "../menus/MenuDetail.svelte";
     import _ from "lodash";
+    import { onMount } from "svelte";
   let open = $state(false)
   let iconSize="w-6 h-6 "
+
+  let nav;
+
+  function fixSafariNavBug() {
+    nav.style.display = 'none';
+    void nav.offsetHeight;
+    nav.style.display = '';
+  }
+
+  onMount(() => {
+    window.addEventListener('resize', fixSafariNavBug);
+  });
 </script>
 
 
@@ -37,7 +50,11 @@
   </div>
 </div> -->
 
-<div class="fixed bottom-0 left-0 w-full z-50 bg-c1 pt-2 pb-6 md:py-1">
+<div 
+  bind:this={nav}
+  class="fixed bottom-0 left-0 w-full z-50 bg-c1 pt-2 pb-6 md:py-1"
+  style="transform: translateZ(0); will-change: transform;"
+>
   <div class="w-full max-w-[600px] mx-auto grid grid-flow-col">
     <div class="flex items-center justify-center">
       <Link to={'/menus'} class="py-2.5 px-3">
