@@ -62,7 +62,7 @@
 
 <div 
   bind:this={nav}
-  class="fixed bottom-0 left-0 w-full z-50 bg-c1 pt-2 pb-6 md:py-1"
+  class="fixed bottom-0 left-0 w-full z-30 bg-c1 pt-2 pb-6 md:py-1"
   style="transform: translateZ(0); will-change: transform;"
 >
   <div class="w-full max-w-[600px] mx-auto grid grid-flow-col">
