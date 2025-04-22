@@ -10,7 +10,7 @@ export default defineConfig({
     svelte(),
     isProduction && strip({
       include: "**/*.(svelte|js|ts)",
-      functions: ["console.*", "assert.*"]
+      // functions: ["console.*", "assert.*"]
     }),
   ],
   build: {
