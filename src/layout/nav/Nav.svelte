@@ -2,7 +2,7 @@
   export const fixSafariNavBug = (el)=> {
     el.style.display = 'none';
     void el.offsetHeight;
-    // el.style.display = '';
+    el.style.display = '';
   }
 </script>
 <script lang="ts">
@@ -37,6 +37,7 @@
   onMount(() => {
     bottomNavEl.set(nav)
     window.addEventListener('resize', fixSafariNavBug);
+    document.body.appendChild(nav);
   });
 </script>
 
