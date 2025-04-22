@@ -31,9 +31,9 @@
     else {
       navigate($location.pathname)
     }
-    setTimeout(e=> {
-      fixSafariNavBug($bottomNavEl)
-    }, 1000)
+    // setTimeout(e=> {
+    //   fixSafariNavBug($bottomNavEl)
+    // }, 1000)
     
   }
 

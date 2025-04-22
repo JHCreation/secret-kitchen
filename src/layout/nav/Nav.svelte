@@ -28,17 +28,17 @@
 
   let nav;
 
-  export function fixSafariNav() {
-    nav.style.display = 'none';
-    void nav.offsetHeight;
-    nav.style.display = '';
-  }
+  // export function fixSafariNav() {
+  //   nav.style.display = 'none';
+  //   void nav.offsetHeight;
+  //   nav.style.display = '';
+  // }
 
-  onMount(() => {
-    bottomNavEl.set(nav)
-    window.addEventListener('resize', fixSafariNavBug);
-    // document.body.appendChild(nav);
-  });
+  // onMount(() => {
+  //   bottomNavEl.set(nav)
+  //   window.addEventListener('resize', fixSafariNavBug);
+  //   // document.body.appendChild(nav);
+  // });
 </script>
 
 
