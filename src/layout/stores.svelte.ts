@@ -7,7 +7,7 @@ import { countryNames } from '~/components/utils/countryNames';
 import { attemptParse } from '~/components/utils/util';
 // import queryString from "query-string";
 
-
+export const bottomNavEl= writable(null)
 export const langlist= $state([ "ko", "en" ]);
 export const lang = writable("ko");
 // const location= useLocation()

@@ -5,7 +5,7 @@
   } from "$lib/components/ui/button/index.js";
   import * as Dialog from "$lib/components/ui/dialog/index.js";
   import ScrollArea from "~/lib/components/ui/scroll-area/scroll-area.svelte";
-  import { cartState, cartOpen, cartCurrent, addToCart, countryCode, tableId } from "../stores.svelte";
+  import { cartState, cartOpen, cartCurrent, addToCart, countryCode, tableId, bottomNavEl } from "../stores.svelte";
   import { sortCart, saveCart as onSave } from "./cart/cart.svelte";
   import { Splide, SplideSlide, SplideTrack } from "@splidejs/svelte-splide";
   import { MoveLeft } from "lucide-svelte";
@@ -13,19 +13,24 @@
   import Badge from "~/lib/components/ui/badge/badge.svelte";
   import { wineType } from "./menu";
   import { useHistory, navigate, useLocation } from "svelte-routing";
-    import _ from "lodash";
-    import { attemptParse } from "~/components/utils/util";
-    import { ShoppingCart } from "lucide-svelte";
+  import _ from "lodash";
+  import { attemptParse } from "~/components/utils/util";
+  import { ShoppingCart } from "lucide-svelte";
+  import { fixSafariNavBug } from "~/layout/nav/Nav.svelte"
+
+  
 
   let { data, open, onOpen, setDetailData}= $props()
   const location = useLocation()
   const onClose= (open)=> {
     onOpen(open)
+    
     console.log(window.history.state)
     if(window.history.state) window.history.back();
     else {
       navigate($location.pathname)
     }
+    fixSafariNavBug($bottomNavEl)
   }
 
   const saveCart= (data)=> (e)=> {

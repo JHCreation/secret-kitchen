@@ -1,10 +1,17 @@
+<script module>
+  export const fixSafariNavBug = (el)=> {
+    el.style.display = 'none';
+    void el.offsetHeight;
+    el.style.display = '';
+  }
+</script>
 <script lang="ts">
   import { Link } from "svelte-routing";
   import routes from "../../routes";
   import Logo from "/img/logo/logo.svg"
   import MenuCart from "../menus/cart/MenuCart.svelte";
 
-  import { menuState, cartOpen, cartCurrent, addToCart, cartStateOpen, cartState, tableId } from "../stores.svelte";
+  import { menuState, cartOpen, cartCurrent, addToCart, cartStateOpen, cartState, tableId, bottomNavEl } from "../stores.svelte";
   import { detailOpen, detailData, handlerDetailOpen, setDetailData } from "../menus/menu_store.svelte";
   
   import { Beer, ShoppingCart, Wine } from 'lucide-svelte';
@@ -13,20 +20,22 @@
   import MenuCartState from "../menus/cart/MenuCartState.svelte";
   import { AlignJustify } from "lucide-svelte";
   import MenuDetail from "../menus/MenuDetail.svelte";
-    import _ from "lodash";
-    import { onMount } from "svelte";
+  import _ from "lodash";
+  import { onMount } from "svelte";
+
   let open = $state(false)
   let iconSize="w-6 h-6 "
 
   let nav;
 
-  function fixSafariNavBug() {
+  export function fixSafariNav() {
     nav.style.display = 'none';
     void nav.offsetHeight;
     nav.style.display = '';
   }
 
   onMount(() => {
+    bottomNavEl.set(nav)
     window.addEventListener('resize', fixSafariNavBug);
   });
 </script>
@@ -114,5 +123,5 @@
 </div>
 
 <MenuDetail data={$detailData} open={$detailOpen} onOpen={handlerDetailOpen} setDetailData={setDetailData}/>
-<MenuCart data={$cartCurrent} open={$cartOpen} onOpen={()=>cartOpen.set(open)}/>
+  <MenuCart data={$cartCurrent} open={$cartOpen} onOpen={()=>cartOpen.set(open)}/>
 <MenuCartState />
