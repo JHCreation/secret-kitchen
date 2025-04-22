@@ -17,6 +17,7 @@
   import { attemptParse } from "~/components/utils/util";
   import { ShoppingCart } from "lucide-svelte";
   import { fixSafariNavBug } from "~/layout/nav/Nav.svelte"
+    import { onMount } from "svelte";
 
   
 
@@ -38,6 +39,9 @@
     onSave({cartCurrent: {key, id}, count:1})
     onClose(false)
   }
+  onMount(()=> {
+    fixSafariNavBug($bottomNavEl)
+  })
 </script>
 
 
