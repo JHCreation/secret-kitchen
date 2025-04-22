@@ -29,13 +29,9 @@
     console.log('viewportHeight', viewportHeight)
     // if(window.history.state) window.history.back();
     // else {
-      // navigate($location.pathname)
+      navigate($location.pathname)
     // }
-    // setTimeout(e=> {
-    //   fixSafariNavBug($bottomNavEl)
-    //   window.scrollTo(0, window.scrollY);
-    //   // document.body.appendChild($bottomNavEl);
-    // }, 1000)
+
     
   }
 
