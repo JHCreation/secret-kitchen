@@ -36,7 +36,7 @@
 
   onMount(() => {
     bottomNavEl.set(nav)
-    window.addEventListener('resize', fixSafariNavBug);
+    // window.addEventListener('resize', fixSafariNavBug);
     // document.body.appendChild(nav);
   });
 </script>
