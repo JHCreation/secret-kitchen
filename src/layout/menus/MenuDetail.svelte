@@ -33,8 +33,9 @@
     }
     setTimeout(e=> {
       fixSafariNavBug($bottomNavEl)
+      window.scrollTo(0, window.scrollY);
       // document.body.appendChild($bottomNavEl);
-    }, 10)
+    }, 1000)
     
   }
 

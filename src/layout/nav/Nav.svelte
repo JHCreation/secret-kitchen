@@ -1,5 +1,6 @@
 <script module>
   export const fixSafariNavBug = (el)=> {
+    if( !el ) return
     el.style.display = 'none';
     void el.offsetHeight;
     el.style.display = '';
