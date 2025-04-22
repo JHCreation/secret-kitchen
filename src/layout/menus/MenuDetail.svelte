@@ -25,11 +25,9 @@
   const location = useLocation()
   const onClose= (open)=> {
     onOpen(open)
-    const viewportHeight = window.innerHeight;
-    console.log('viewportHeight', viewportHeight)
     // if(window.history.state) window.history.back();
     // else {
-      navigate($location.pathname)
+      navigate($location.pathname, {preserveScroll: true})
     // }
 
     
