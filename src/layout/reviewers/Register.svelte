@@ -8,7 +8,7 @@
 </script>
 
 <div class="w-full min-h-dvh flex items-center justify-center mb-20">
-  <div class="border rounded-sm py-5 px-2 m-2">
+  <div class="rounded-sm m-3">
     <Description />
     <!-- <div class="flex items-center text-gray-400">
       <Frown size={18}/>
