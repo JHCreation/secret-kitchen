@@ -26,7 +26,6 @@
 
   let open = $state(false)
   let iconSize="w-6 h-6 "
-
   let nav;
 
   export function fixSafariNav() {
