@@ -101,6 +101,7 @@ export const getMenuInfo= (key:string, data:any)=> {
   
   const type= processItem(data[`${key}_item_1`])
   const type2= processItem(data[`${key}_item_2`])
+  const type1= processItem(data[`${key}_type`])
   const priceNum= Number(data[`${key}_price`]*1000)
   const salePriceNum= data[`${key}_sale_price`] ?  Number(data[`${key}_sale_price`]*1000) : null
   const price= priceNum.toLocaleString()
@@ -111,6 +112,6 @@ export const getMenuInfo= (key:string, data:any)=> {
   // const salePrice= '12,000'
   return {
     key, keyNo, id, name, imgs, thumb, type, price, salePrice, volume, abv,
-    subject, country, type2, priceNum, salePriceNum, contents, images, priceOption, payPrice, payPriceNum
+    subject, country, type1, type2, priceNum, salePriceNum, contents, images, priceOption, payPrice, payPriceNum
   }
 }

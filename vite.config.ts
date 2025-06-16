@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
 import path from 'path-browserify'
 import strip from "@rollup/plugin-strip";
-
+console.log("Current ENV:", process.env.VITE_API_URL);
 const isProduction = process.env.NODE_ENV === 'production';
 // https://vite.dev/config/
 export default defineConfig({

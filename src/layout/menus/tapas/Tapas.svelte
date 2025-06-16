@@ -1,5 +1,5 @@
 <script lang="ts">
-  import MenuGrid from "../item/MenuGrid.svelte";
+  import MenuGrid from "../item/tapas/MenuGrid.svelte";
   import { menuState } from "../../stores.svelte";
   import _ from "lodash";
     import MenuWrap from "../MenuWrap.svelte";
