@@ -2,6 +2,7 @@
 import { Beer, Wine, Utensils, } from 'lucide-svelte';
 import Glen from '../icons/Glen.svelte';
 import { countryCode } from '../stores.svelte';
+import Highball from '../icons/Highball.svelte';
 
 
 export const menuType= {
@@ -9,6 +10,7 @@ export const menuType= {
   wine: { name: 'Wine', icon: Wine, link: '/wine' },
   beer: { name: 'Beer', icon: Beer, link: '/beer' },
   liqueur: { name: 'Whiskey', icon: Glen, link: '/liqueur' },
+  cocktail: { name: 'Highball', icon: Highball, link: '/cocktail' },
 }
 export const wineType= {
   red: {

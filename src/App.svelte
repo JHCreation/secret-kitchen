@@ -20,6 +20,7 @@
 	import queryString from "query-string";
 	import { createJWT, generateSecretKey, verifyJWT } from "./components/utils/crypto";
     import { getSaleDate, stringToBoolean } from "./layout/stores-utils.svelte";
+    import Cocktail from "./routes/Cocktail.svelte";
     
 	
   	let url= '';
@@ -124,6 +125,9 @@
 		</Route>
 		<Route path="/menus/tapas" >
 			<Tapas  />
+		</Route>
+		<Route path="/menus/cocktail" >
+			<Cocktail  />
 		</Route>
 		<Route path="/reviewers/register" >
 			<Reviewers />
