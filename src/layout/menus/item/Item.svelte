@@ -58,8 +58,8 @@
           'aspect-square': key == 'tapas'
         })}`}>
           <img src={`${info.thumb}`} alt="" class={`w-full h-full ${clsx({ 
-            'object-contain': key != 'tapas', 
-            'object-cover': key == 'tapas' && imgs, 
+            'object-contain': key != 'tapas' && key != 'cocktail', 
+            'object-cover': (key == 'tapas' || key == 'cocktail') && imgs, 
           }) } `}>
         </div>
 
