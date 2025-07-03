@@ -54,8 +54,8 @@
           </div>
         {/if}
         <div class={`w-full ${clsx({ 
-          'h-14 md:h-28': key != 'tapas',
-          'aspect-square': key == 'tapas'
+          'h-14 md:h-28': key != 'tapas' && key != 'cocktail',
+          'aspect-square': key == 'tapas' || key == 'cocktail',
         })}`}>
           <img src={`${info.thumb}`} alt="" class={`w-full h-full ${clsx({ 
             'object-contain': key != 'tapas' && key != 'cocktail', 
