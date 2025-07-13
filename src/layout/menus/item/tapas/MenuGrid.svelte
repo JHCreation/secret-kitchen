@@ -13,14 +13,15 @@
     main: '메인',
     pasta: '파스타',
     side: '사이드',
-    salad: '샐러드'
+    salad: '샐러드',
+    dessert: '디저트',
   }
   $inspect($menuState, list, sortList)
 </script>
 
 
 {#if $menuState && sortList}
-    {#each Object.keys(sortList) as key(key)}
+    {#each Object.keys(category) as key(key)}
       <div class="py-10">
 
           <div class="font-[family-name:var(--font-type4)] md:text-center text-2xl md:text-3xl border-b-2 border-c1 mb-2 md:mb-4 pb-2 md:pb-4 md:mx-4 px-4 ">{category[key]}</div>
