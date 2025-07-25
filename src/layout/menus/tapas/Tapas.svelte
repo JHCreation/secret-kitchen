@@ -4,7 +4,7 @@
   import _ from "lodash";
     import MenuWrap from "../MenuWrap.svelte";
     import { menuType } from "../menu";
-    import ItemNotice from "../ItemNotice.svelte";
+    import ItemNotice from "../_com/ItemNotice.svelte";
 
   const id= 'tapas';
   let list= $derived($menuState?.[id] ?? [])

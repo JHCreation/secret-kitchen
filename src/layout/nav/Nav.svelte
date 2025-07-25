@@ -1,10 +1,10 @@
 <script module>
-  export const fixSafariNavBug = (el)=> {
-    if( !el ) return
-    el.style.display = 'none';
-    void el.offsetHeight;
-    el.style.display = '';
-  }
+  // export const fixSafariNavBug = (el)=> {
+  //   if( !el ) return
+  //   el.style.display = 'none';
+  //   void el.offsetHeight;
+  //   el.style.display = '';
+  // }
 </script>
 <script lang="ts">
   import { Link } from "svelte-routing";
@@ -25,14 +25,14 @@
   import { onMount } from "svelte";
 
   let open = $state(false)
-  let iconSize="w-6 h-6 "
+  let iconSize="w-5 h-5 md:w-6 md:h-6 "
   let nav;
 
-  export function fixSafariNav() {
-    nav.style.display = 'none';
-    void nav.offsetHeight;
-    nav.style.display = '';
-  }
+  // export function fixSafariNav() {
+  //   nav.style.display = 'none';
+  //   void nav.offsetHeight;
+  //   nav.style.display = '';
+  // }
 
   // onMount(() => {
   //   bottomNavEl.set(nav)

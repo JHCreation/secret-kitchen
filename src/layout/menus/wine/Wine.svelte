@@ -14,7 +14,7 @@
   import type { WineSortType } from "./wineStore.svelte";
   import OrderBy from "./OrderBy.svelte";
   import { Dot } from "lucide-svelte";
-  import ItemNotice from "../ItemNotice.svelte";
+  import ItemNotice from "../_com/ItemNotice.svelte";
   
   
   let { type='all' }= $props()

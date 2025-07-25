@@ -16,8 +16,7 @@
   import _ from "lodash";
   import { attemptParse } from "~/components/utils/util";
   import { ShoppingCart } from "lucide-svelte";
-  import { fixSafariNavBug } from "~/layout/nav/Nav.svelte"
-    import { onMount } from "svelte";
+  import { onMount } from "svelte";
 
   
 

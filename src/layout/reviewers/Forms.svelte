@@ -30,24 +30,9 @@
         channel: z.array( 
             z.string()
         ).min(1, "한개 이상 선택").default([]),
-        /* channel: z.array(z.object({
-            id: z.string(),
-            value: z.boolean()
-        })
-        ).min(1, "한개 이상 선택").default([]), */
-        // channels: z.array(z.string()).min(2, "Please select at least one option"),
+       
         gender: z.string().nonempty("필수입력").default(''),
-        birthday: z.string().optional()
-        // .length(8, { message: "8자리 입력" })
-        ,
-        /* link: z.array(z.object({
-            id: z.string().nonempty("필수입력"),
-            value: z.array( z.object({
-                value: z.string().nonempty("필수입력")
-            }), {
-                required_error: "한개 이상 입력"
-            } ).min(1, '한개 이상 입력')
-        })).min(1, '한개 이상 입력'), */
+        birthday: z.string().optional(),
         link: z.record(channelKeys,
             z.array( 
                 z.object({
@@ -55,33 +40,17 @@
                 }), 
                 { required_error: "한개 이상 입력" }
             ).min(1, '한개 이상 입력')
-            /* z.object({
-                id: z.string().nonempty("필수입력"),
-                value: z.array( 
-                    z.object({
-                        value: z.string().nonempty("필수입력")
-                    }), 
-                    { required_error: "한개 이상 입력" }
-                ).min(1, '한개 이상 입력')
-            }) */
         ),
-        /* link: z.array(z.object({
-            id: z.string().nonempty("필수입력."),
-            value: z.array( 
-                z.string().nonempty("필수입력..")
-            ).min(1, '한개 이상 입력!')
-        })).min(1, '한개 이상 입력.'), */
         wish_drink: z.array(z.string()).min(1, "한개 이상 선택"),
         phone: z.string().nonempty("필수입력"),
         msg: z.string().optional(),
         email: z.string().nonempty('필수입력').email('형식을 확인해주세요.'),
         privateAgree: z.literal(true, {
             errorMap: () => ({ message: "개인정보 처리방침에 동의해야 합니다." })
-
         })
     });
 
-    console.log(schema)
+    // console.log(schema)
 
     const warnSchema = z.object({
         password: z.string()
@@ -109,10 +78,9 @@
         
         extend: [
             validator({ schema }),
-            validator({ schema: warnSchema, level: 'warning' }),
+            // validator({ schema: warnSchema, level: 'warning' }),
         ], // OR `extend: [validator],`
         onSubmit: async (values, context)=> {
-            // return false;
             submitted= values
             console.log(values, context)
             loading = true
@@ -161,20 +129,6 @@
         setFields(name, selete)
     }
 
-   /*  const handleChannelChange= ({
-        name, data, value, checked
-    })=> {
-        let selete;
-        if (checked) {
-            selete = [...data, { value }];
-        } else {
-            selete = data.filter(i => i.value !== value);
-        }
-        setTouched(name, true)
-        setData(name, selete);
-        setFields(name, selete)
-    } */
-
     const gender = [
         { id: 'male', label: '남' },
         { id: 'female', label: '여' },
@@ -184,10 +138,7 @@
         { id: 'whisky', label: '위스키' },
         { id: 'beer', label: '맥주' },
     ];
-    /* let selectedGender = $state('');
-    const setSelected= (value)=> {
-        selectedGender= value
-    } */
+    
     
     const formatNumber = (name)=> (event)=> {
         let value = event.target.value.replace(/\D/g, ""); // 숫자만 남기기
@@ -198,9 +149,6 @@
         // setFields("age", value ? parseInt(value, 10) : "");
     }
 
-
-    // let touchedSubmit= $state(false)
-
     const handleClickSubmit= ()=> {
         console.log($data.privateAgree)
         if( !$isValid && $data.privateAgree ) scrollToElement()
@@ -210,7 +158,6 @@
     function scrollToElement() {
         wrapperRef?.scrollIntoView({ behavior: 'smooth', block: "start" });
     }
-
 
 
     let privateChecked= $state(false)

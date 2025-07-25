@@ -21,7 +21,8 @@
 	import { createJWT, generateSecretKey, verifyJWT } from "./components/utils/crypto";
     import { getSaleDate, stringToBoolean } from "./layout/stores-utils.svelte";
     import Cocktail from "./routes/Cocktail.svelte";
-    
+	import { appRoutes } from "./routes/_routes";
+
 	
   	let url= '';
 	let loading= $state(false)
@@ -108,7 +109,20 @@
 	{/if}
 	
 	{#if !loading}
-		<Route path="/"><Home /></Route>
+		{#each appRoutes as route (route.path)}
+			{@const RouteComponent:any = route.component }
+			{#if route.props}
+				<Route path={route.path} let:params >
+					<RouteComponent {...route.props(params)} />
+				</Route>
+
+			{:else}
+				<Route path={route.path} >
+					<RouteComponent />
+				</Route>
+			{/if}
+		{/each}
+		<!-- <Route path="/"><Home /></Route>
 		<Route path="/menus"><Menus /></Route>
 		<Route path="/menus-outside"><Menus /></Route>
 		<Route path="/menus/wine">
@@ -132,6 +146,9 @@
 		<Route path="/reviewers/register" >
 			<Reviewers />
 		</Route>
+		<Route path="/reviewers/register-event" >
+			<Reviewers />
+		</Route> -->
 	{/if}
 	
 	

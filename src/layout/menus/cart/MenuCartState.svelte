@@ -54,7 +54,7 @@
     const currentDate= getSaleDate()
     const saleDate= currentDate.format('YYYY-MM-DD')
     let currentOg= null
-    if ( !$orders ) {
+    // if ( !$orders ) {
 			const qry= queryString.stringify({ tid: $tableId, status: 'use', sale_date: saleDate })
       currentOg= await getOrderId(qry)
       // return
@@ -74,10 +74,10 @@
         }
       }
 
-    }
-    if ( $orders && !currentOg ) {
-      order_id= $orders?.id
-    }
+    // }
+    // if ( $orders && !currentOg ) {
+    //   order_id= $orders?.id
+    // }
 
     const orderInfo= makeOrderList({ cartStateList: $cartStateList, tid: $tableId })
     type SubmitParamType = {
@@ -205,7 +205,7 @@
                   <div class="w-10 h-10 min-w-10">
                     <img src={`${thumb}`} alt="" class="w-full h-full object-contain">
                   </div>
-                  <div class="ml-1 flex justify-center flex-col">
+                  <div class="ml-1.5 flex justify-center flex-col">
                     <div class="text-xs md:text-sm font-bold leading-3 md:leading-[1em] line-clamp-2 text-left">{name}</div>
                     
                     {#if volume || abv }
@@ -242,8 +242,8 @@
                       onCount={(count)=> {
                         onSave(item, count)
                       }}
-                      price={currentPrice}
-                      {salePrice}
+                      price={price}
+                      salePrice={currentPrice}
                     />
                   {/if}
 

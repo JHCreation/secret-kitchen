@@ -103,7 +103,7 @@
                   <div class="w-10 h-10 min-w-10">
                     <img src={`${thumb}`} alt="" class="w-full h-full object-contain">
                   </div>
-                  <div class="flex justify-center flex-col">
+                  <div class="ml-1.5 flex justify-center flex-col">
                     <div class="text-xs md:text-sm font-extrabold leading-4 md:leading-4 line-clamp-2 text-left">{name}</div>
                     <div class="font-['Wanted_Sans_Variable'] flex items-center leading-4">
                       <span class="text-2xs">{volume}</span>

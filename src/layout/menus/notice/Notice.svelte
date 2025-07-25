@@ -1,12 +1,5 @@
 <script lang="ts">
   import * as Accordion from "$lib/components/ui/accordion/index.js";
-    import { Clock8 } from "lucide-svelte";
-    import { Instagram } from "lucide-svelte";
-    import { CalendarDays } from "lucide-svelte";
-    import { SquareArrowOutUpRight } from "lucide-svelte";
-    import { MapPin } from "lucide-svelte";
-    import { Check } from "lucide-svelte";
-    import Logo from "/img/logo/logo.svg"
   const notice= [
     { msg: '물, 냅킨, 물티슈는 셀프로 이용 부탁드립니다.' },
     { msg: '드시다가 남은 모든 주류는 포장 가능합니다.' },
@@ -21,6 +14,8 @@
       detail: ['매장내 와인 1병이상 구매시 가능합니다.', '최대 와인 1병만 가능합니다.', '비용은 1병당 20,000원 입니다.'], 
       type: 'accordion' 
     },
+    { msg: '기본적으로 와인잔 교체는 되지 않습니다. 린싱을 추천드리며, 부득이한 경우 말씀해 주시면 감사드립니다.'},
+
   ]
 </script>
 {#snippet name(name)}
@@ -41,9 +36,7 @@
 
 
 
-<div class="w-full max-w-28 md:max-w-40 mx-auto">
-  <img src={Logo} alt="">
-</div>
+
 <div class="border md:border-none rounded-lg font-[family-name:var(--font-type2)] w-full max-w-container-sm mx-auto flex flex-col md:flex-row mt-6">
   
   <div class="md:border rounded-lg flex-1 p-5 inline-block md:mr-8">
@@ -121,14 +114,13 @@
   </div>
 
   <div class="md:border rounded-lg flex-1 py-5 px-5">
-    <!-- <p class="font-bold">안내사항 (꼭 확인해 주세요!)</p> -->
     {@render name('안내사항')}
     <ul class="py-1 list-[upper-roman]">
       {#each notice as notice, i}
-        <li class="py-0.5 flex">
+        <li class="py-0 flex">
           
           <!-- <Check size={14} class="text-red-500 mt-0. mr-1"/> -->
-          <div class="leading-3 py-1">
+          <div class="leading-5 py-1">
             {#if notice?.type == 'accordion'}
               <Accordion.Root type="single" class="">
                 <Accordion.Item value="item-1" class="border-0" >
@@ -156,10 +148,13 @@
               {/if}
             {/if}
             
-            <!-- {#if i == 2 }
+            {#if i == 5 }
             <Accordion.Root type="single" class="">
               <Accordion.Item value="item-1" class="border-0" >
-                <Accordion.Trigger class="inline-flex py-0 text-1.5xs text-slate-400 justify-start">- 린싱하는 방법 영상보기</Accordion.Trigger>
+                <Accordion.Trigger class="inline-flex py-0 text-1.5xs text-slate-400 justify-start hover:no-underline">
+                  {@render wrap("린싱하는 방법 영상보기")}
+                  <!-- <span class="mr-1 leading-5">린싱하는 방법 영상보기</span> -->
+                </Accordion.Trigger>
                 <Accordion.Content>
                   <div class="mt-2 flex justify-center w-full">
                     <iframe title="와인 린싱하는 법" width="176.4" height="315" src="https://www.youtube.com/embed/47Yk5Wyu1vM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -167,7 +162,7 @@
                 </Accordion.Content>
               </Accordion.Item>
             </Accordion.Root>
-            {/if} -->
+            {/if}
           </div>
           
         </li>

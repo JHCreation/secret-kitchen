@@ -5,7 +5,6 @@
   import { useLocation } from "svelte-routing";
   import queryString from "query-string";
   import { handlerDetailOpen, onDetailOpen } from "./menu_store.svelte";
-    import PopupNotice from "./PopupNotice.svelte";
   
   let { children }= $props()
   const location= useLocation()

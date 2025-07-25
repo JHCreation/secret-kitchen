@@ -19,9 +19,11 @@
   import { Link } from "svelte-routing";
   import { ChevronRight } from "lucide-svelte";
   import Item from "./item/Item.svelte";
-  import Notice from "./Notice.svelte";
+  import Notice from "./notice/Notice.svelte";
   import MenuWrap from "./MenuWrap.svelte";
-    import PopupNotice from "./PopupNotice.svelte";
+  // import PopupNotice from "./PopupNotice.svelte";
+  import Logo from "~/assets/logo/logo.svg"
+    import Promotion from "./notice/banner/Promotion.svelte";
   
   console.log(menuType, Object.keys(menuType))
 </script>
@@ -29,8 +31,13 @@
 <!-- <PopupNotice /> -->
 
 <MenuWrap>
+
+<div class="w-full max-w-28 md:max-w-40 mx-auto">
+  <img src={Logo} alt="">
+</div>
 <div class="px-1">
   <Notice />
+  <Promotion />
   
   <div class="mt-4">
     {#if $menuState}

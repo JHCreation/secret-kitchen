@@ -6,9 +6,12 @@
     import { SquareArrowOutUpRight } from "lucide-svelte";
     import { PencilLine } from "lucide-svelte";
     import { FileText } from "lucide-svelte";
-  import { Quote } from "lucide-svelte";
-    import { Link } from "svelte-routing";
+    import { Quote } from "lucide-svelte";
     import { Button } from "~/lib/components/ui/button";
+
+    import ReviewersVector from '~/assets/vectors/reviewers.svg';
+    import ReviewersLogoVector from '~/assets/vectors/review-logo.svg';
+
 
   const listContents= [
     {
@@ -39,12 +42,12 @@
   <!-- <img src={`/img/vectors/wine-glass.svg`} alt="" class="relative z-10 w-full max-w-64 mx-auto"> -->
   
   <div class="relative">
-    <img src={`/img/vectors/reviewers.svg`} alt="" class="relative z-10 w-full mx-auto">
+    <img src={ReviewersVector} alt="" class="relative z-10 w-full mx-auto">
     <div class="z-20 absolute h-28 w-full bottom-0 bg-gradient-to-t from-5%- from-[#F4F2E9] to-transparent"></div>
   </div>
   <div class="relative bg-[#F4F2E9]">
     <div class="w-full relative top-[-60px]- md:px-8 px-4 py-10">
-      <img src="/img/vectors/review-logo.svg" alt="" class="max-w-40 mx-auto mt-8">
+      <img src={ReviewersLogoVector} alt="" class="max-w-40 mx-auto mt-8">
       <div class="text-amber-950 mt-8">
         <Quote size={16} class="mx-auto rotate-180"/>
         <p class="text-center text-xl font-bold max-w-52 break-keep mx-auto my-2">와인의 종류는 밤하늘의 별만큼이나 많다.</p>
