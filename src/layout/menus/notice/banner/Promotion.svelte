@@ -19,7 +19,7 @@
 
 {#snippet arrow_buttons( className = '', children = null )}
     {@const Icon= children}
-    <Button size={'sm'} class={cn("bg-white/20 border-slate-600- border- text-slate-600 hover:text-slate-200 p-1.5 md:p-2.5 h-auto touch-manipulation size-8 [&_svg]:size-6 ", className)} >
+    <Button size={'sm'} class={cn("pointer-events-auto bg-white/20 border-slate-600- border- text-slate-600 hover:text-slate-200 p-1.5 md:p-2.5 h-auto touch-manipulation size-8 [&_svg]:size-6 ", className)} >
         <Icon strokeWidth={1}/>
     </Button>
 {/snippet}
@@ -29,7 +29,7 @@
         aria-label={"Promotion Banner"}
         class={cn("mt-4", {
             "w-full": !isOne,
-            "w-1/2 mx-auto": isOne,
+            "md:w-1/2 md:mx-auto": isOne,
         })}
         hasTrack={false}
         options={{
@@ -57,7 +57,7 @@
                 // 640 : { perPage: 4, perMove: 1,},
                 480 : { 
                     type:'slide', perPage: 1, perMove: 1, gap:10,
-                    fixedWidth : '80%', 
+                    fixedWidth : isOne ? '100%' : '80%', 
                     // padding: { right: 40 }
                 },
             },
@@ -70,7 +70,7 @@
         }}
         >
         {#if promotions.length > 1}
-        <div class="splide__arrows absolute top-1/2 -translate-y-1/2 z-10 px-2 w-full flex justify-between items-center">
+        <div class="splide__arrows absolute top-1/2 -translate-y-1/2 z-10 px-2 w-full hidden md:flex justify-between items-center pointer-events-none">
             {@render arrow_buttons('splide__arrow splide__arrow--prev', MoveLeft)}
             {@render arrow_buttons('splide__arrow splide__arrow--next', MoveRight)}
         </div>
