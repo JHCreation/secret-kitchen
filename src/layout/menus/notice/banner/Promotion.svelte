@@ -24,10 +24,13 @@
     </Button>
 {/snippet}
 
-<div class="relative ">
+<div class="relative w-full max-w-container-sm mx-auto">
     <Splide 
         aria-label={"Promotion Banner"}
-        class="w-full mt-4"
+        class={cn("mt-4", {
+            "w-full": !isOne,
+            "w-1/2 mx-auto": isOne,
+        })}
         hasTrack={false}
         options={{
             // width : 800,
@@ -36,22 +39,28 @@
             speed: 400,
             type: isOne ? 'fade' : 'loop',
             pauseOnHover: false,
-            rewind : true,
+            // rewind : true,
             autoplay: isOne ? false : true,
             arrows: !isOne,
-            // perPage: 28,
-            // gap: 5,
+            perPage: isOne ? 1 : 2,
+            perMove: 1,
+            gap: 20,
+            // fixedWidth : '100%',
             // padding: { left: 0, right: 50 },
-            // breakpoints: {
-            //     3400: { perPage: 16, perMove: 5, },
-            //     2400: { perPage: 12, perMove: 5, },
-            //     2000: { perPage: 12, perMove: 5, },
-            //     1500: { perPage: 8, perMove: 5, },
-            //     960: { perPage: 5, perMove: 5, },
-            //     780: { perPage: 4, perMove: 4,},
-            //     640 : { perPage: 4, perMove: 1,},
-            //     480 : { perPage: 4, perMove: 1, padding: {right:20},},
-            // },
+            breakpoints: {
+                // 3400: { perPage: 16, perMove: 5, },
+                // 2400: { perPage: 12, perMove: 5, },
+                // 2000: { perPage: 12, perMove: 5, },
+                // 1500: { perPage: 8, perMove: 5, },
+                // 960: { perPage: 5, perMove: 5, },
+                // 780: { perPage: 4, perMove: 4,},
+                // 640 : { perPage: 4, perMove: 1,},
+                480 : { 
+                    type:'slide', perPage: 1, perMove: 1, gap:10,
+                    fixedWidth : '80%', 
+                    // padding: { right: 40 }
+                },
+            },
             flickPower: 600,
             flickMaxPages: 1,
             dragMinThreshold: {
@@ -70,7 +79,7 @@
         <SplideTrack class="mt-2">
             {#each promotions as promo}
                 <SplideSlide class="flex">
-                    <div class="">
+                    <div class="rounded-xl overflow-hidden">
                         <img src={promo.img} alt={promo.alt} class="w-full h-full object-contain">
                     </div>
                 </SplideSlide>
