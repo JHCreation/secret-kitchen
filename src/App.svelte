@@ -82,18 +82,18 @@
 
 <Router {url} 
 	viewtransition={(r:any) => {
-		console.log(r, history, window.location, window.location.pathname, 'routing')
-		const regex = /^\/menus\/wine(\/.*)?$/;
-		// const regex = /^\/menus\/wine\/.*$/;
+		// console.log(r, history, window.location, window.location.pathname, 'routing')
+		// const regex = /^\/menus\/wine(\/.*)?$/;
+		// // const regex = /^\/menus\/wine\/.*$/;
 		
-		if( 
-			// r.direction == 'in' || 
-			r.direction == 'out' 
-			&& !regex.test(window.location.pathname) 
-		) {
-			loading= true
-			setTimeout(e=> loading= false, 300)
-		}
+		// if( 
+		// 	// r.direction == 'in' || 
+		// 	r.direction == 'out' 
+		// 	&& !regex.test(window.location.pathname) 
+		// ) {
+		// 	loading= true
+		// 	setTimeout(e=> loading= false, 300)
+		// }
 		return {}
 		// return { duration: 500, easing: cubicIn, css: (t) => `scale:${t};transform-origin:center center;` }
 		// return { fn: fade, duration: 500 }
@@ -122,35 +122,6 @@
 				</Route>
 			{/if}
 		{/each}
-		<!-- <Route path="/"><Home /></Route>
-		<Route path="/menus"><Menus /></Route>
-		<Route path="/menus-outside"><Menus /></Route>
-		<Route path="/menus/wine">
-			<Wine />
-		</Route>
-		<Route path="/menus/wine/:type" let:params>
-			<Wine type={params.type} />
-		</Route>
-		<Route path="/menus/beer" >
-			<Beer  />
-		</Route>
-		<Route path="/menus/liqueur" >
-			<Liqueur  />
-		</Route>
-		<Route path="/menus/tapas" >
-			<Tapas  />
-		</Route>
-		<Route path="/menus/cocktail" >
-			<Cocktail  />
-		</Route>
-		<Route path="/reviewers/register" >
-			<Reviewers />
-		</Route>
-		<Route path="/reviewers/register-event" >
-			<Reviewers />
-		</Route> -->
 	{/if}
-	
-	
 	
 </Router>

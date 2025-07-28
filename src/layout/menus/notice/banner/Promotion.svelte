@@ -56,7 +56,7 @@
                 // 780: { perPage: 4, perMove: 4,},
                 // 640 : { perPage: 4, perMove: 1,},
                 480 : { 
-                    type:'slide', perPage: 1, perMove: 1, gap:10,
+                    type: isOne ? 'fade' : 'slide', perPage: 1, perMove: 1, gap:10,
                     fixedWidth : isOne ? '100%' : '80%', 
                     // padding: { right: 40 }
                 },

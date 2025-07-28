@@ -21,6 +21,37 @@
 </url>
 
 <url>
+	<loc>https://www.secret-kitchen.net/menus/wine/red</loc>
+	<changefreq>weekly</changefreq>
+	<priority>1.00</priority>
+</url>
+<url>
+	<loc>https://www.secret-kitchen.net/menus/wine/white</loc>
+	<changefreq>weekly</changefreq>
+	<priority>1.00</priority>
+</url>
+<url>
+	<loc>https://www.secret-kitchen.net/menus/wine/sparkling</loc>
+	<changefreq>weekly</changefreq>
+	<priority>1.00</priority>
+</url>
+<url>
+	<loc>https://www.secret-kitchen.net/menus/wine/rose</loc>
+	<changefreq>weekly</changefreq>
+	<priority>1.00</priority>
+</url>
+<url>
+	<loc>https://www.secret-kitchen.net/menus/wine/natural</loc>
+	<changefreq>weekly</changefreq>
+	<priority>1.00</priority>
+</url>
+<url>
+	<loc>https://www.secret-kitchen.net/menus/wine/port</loc>
+	<changefreq>weekly</changefreq>
+	<priority>1.00</priority>
+</url>
+
+<url>
 	<loc>https://www.secret-kitchen.net/menus/beer</loc>
 	<changefreq>weekly</changefreq>
 	<priority>1.00</priority>
@@ -34,6 +65,12 @@
 
 <url>
 	<loc>https://www.secret-kitchen.net/menus/tapas</loc>
+	<changefreq>weekly</changefreq>
+	<priority>1.00</priority>
+</url>
+
+<url>
+	<loc>https://www.secret-kitchen.net/menus/cocktails</loc>
 	<changefreq>weekly</changefreq>
 	<priority>1.00</priority>
 </url>

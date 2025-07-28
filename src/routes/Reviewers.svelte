@@ -1,5 +1,9 @@
 <script lang="ts">
-  import Register from "~/layout/reviewers/Register.svelte";
+    import { setContext } from "svelte";
+    import RegisterIndex from "~/layout/reviewers/RegisterIndex.svelte";
+    const { events, events_info } = $props();
+    setContext('events', { events, events_info});
+
 </script>
 
 <svelte:head>
@@ -7,4 +11,4 @@
   <meta name="description" content={'시크릿키친 리뷰어를 모집합니다.'}>
 </svelte:head>
 
-<Register />
+<RegisterIndex />

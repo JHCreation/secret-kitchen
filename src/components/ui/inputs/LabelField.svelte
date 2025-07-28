@@ -46,10 +46,10 @@
 </script>
 
 <fieldset 
-    class={cn("border border-gray-600 p-2 rounded-", className , clsx({
+    class={cn("border border-gray-600 p-2 rounded-", className,{
         'border-red-600' : errors,
         // 'border-red-600' : error != null ? error : err?.[name],
-    }))}
+    })}
 >
     <legend class="text-xs ml-2 px-3">
         {label}

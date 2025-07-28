@@ -38,7 +38,7 @@
 </script>
 
 
-<div class="w-full max-w-[600px]">
+<div class="w-full max-w-[600px] mx-auto ">
   <!-- <img src={`/img/vectors/wine-glass.svg`} alt="" class="relative z-10 w-full max-w-64 mx-auto"> -->
   
   <div class="relative">
