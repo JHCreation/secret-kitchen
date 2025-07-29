@@ -45,7 +45,7 @@
       <div class="relative w-full h-full grid grid-rows-[minmax(min-content,0)_minmax(min-content,auto)]" >
         {#if $countryCode}
           <div class="grid absolute top-0 left-0">
-            {#if _.isArray(countryInfo)}
+            {#if _.isArray(countryInfo) && !name.includes('[음료]')}
               {#each countryInfo as ctr}
                 <!-- {console.log($countryCode[ctr].image)} -->
                 <img src={$countryCode[ctr].image} alt="" class="w-4 h-auto">

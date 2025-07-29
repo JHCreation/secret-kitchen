@@ -243,7 +243,7 @@
                         onSave(item, count)
                       }}
                       price={price}
-                      salePrice={currentPrice}
+                      salePrice={salePrice}
                     />
                   {/if}
 

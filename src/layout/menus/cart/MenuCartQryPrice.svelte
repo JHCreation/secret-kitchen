@@ -4,8 +4,7 @@
   import { CircleMinus } from "lucide-svelte";
 
   let { item, qty, onCount, onCountInput, price, salePrice, }= $props();
-  // const { key, id, name, imgs, thumb, type,  volume, abv, priceNum, salePriceNum }= item
-  // console.log(qty)
+  $inspect(item, qty,  price, salePrice);
 </script>
 
 
