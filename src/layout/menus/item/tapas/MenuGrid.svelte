@@ -24,10 +24,11 @@
     {#each Object.keys(category) as key(key)}
       <div class="py-10">
 
-          <div class="font-[family-name:var(--font-type4)] md:text-center text-2xl md:text-3xl border-b-2 border-c1 mb-2 md:mb-4 pb-2 md:pb-4 md:mx-4 px-4 ">{category[key]}</div>
+          <div class="font-[family-name:var(--font-type4)] md:text-center text-2xl md:text-3xl border-b-2 border-c1 mb-2 md:mb-4 pb-2 md:pb-4 md:mx-0 px-4 ">{category[key]}</div>
           {#if sortList[key].length > 0}
             <div class={`grid justify-center 
-              md:grid-cols-[repeat(auto-fill,115px)]
+              md:grid-cols-[repeat(auto-fill,115px)]-
+              md:grid-cols-[repeat(auto-fill,_minmax(115px,_1fr))]
               ${clsx({ 
                 'grid-cols-4': grid==4, 
                 'grid-cols-3': grid==3, 

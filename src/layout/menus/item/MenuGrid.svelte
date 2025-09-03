@@ -15,7 +15,8 @@
 
   {#if list.length > 0}
     <div class={`grid justify-center 
-      md:grid-cols-[repeat(auto-fill,115px)]
+      md:grid-cols-[repeat(auto-fill,115px)- 
+      md:grid-cols-[repeat(auto-fill,_minmax(115px,_1fr))]
       ${clsx({ 
         'grid-cols-4': grid==4, 
         'grid-cols-3': grid==3, 
@@ -44,3 +45,11 @@
     </div>
   </div>
 {/if}
+
+<!-- Tailwind JIT arbitrary value 사용 -->
+<!-- <div class="grid gap-4 grid-cols-[repeat(auto-fill,_minmax(200px,_1fr))]">
+  
+  <div class="bg-gray-100 p-4">item</div>
+  <div class="bg-gray-100 p-4">item</div>
+  ...
+</div> -->

@@ -10,7 +10,10 @@
 
     const promotions= [
         // { img: Promotion1, alt: "Promotion Banner 1" },
-        { img: Promotion2, alt: "Promotion Banner 2" },
+        { 
+            img: Promotion2, alt: "건대 시크릿키친 콜키지 프리",
+            details: "광진구 건대 시크릿키친 콜키지 프리 이벤트!<br>콜키지 무료 혜택을 놓치지 마세요!" 
+        },
         // { img: Promotion3, alt: "Promotion Banner 3" },
     ];
     const isOne= promotions.length == 1;
@@ -69,22 +72,25 @@
             },
         }}
         >
-        {#if promotions.length > 1}
-        <div class="splide__arrows absolute top-1/2 -translate-y-1/2 z-10 px-2 w-full hidden md:flex justify-between items-center pointer-events-none">
-            {@render arrow_buttons('splide__arrow splide__arrow--prev', MoveLeft)}
-            {@render arrow_buttons('splide__arrow splide__arrow--next', MoveRight)}
-        </div>
-        {/if}
+            {#if promotions.length > 1}
+            <div class="splide__arrows absolute top-1/2 -translate-y-1/2 z-10 px-2 w-full hidden md:flex justify-between items-center pointer-events-none">
+                {@render arrow_buttons('splide__arrow splide__arrow--prev', MoveLeft)}
+                {@render arrow_buttons('splide__arrow splide__arrow--next', MoveRight)}
+            </div>
+            {/if}
 
-        <SplideTrack class="mt-2">
-            {#each promotions as promo}
-                <SplideSlide class="flex">
-                    <div class="rounded-xl overflow-hidden">
-                        <img src={promo.img} alt={promo.alt} class="w-full h-full object-contain">
-                    </div>
-                </SplideSlide>
-            {/each}
+            <SplideTrack class="mt-2">
+                {#each promotions as promo}
+                    <SplideSlide class="flex">
+                        <div class="rounded-xl overflow-hidden ">
+                            <img src={promo.img} alt={promo.alt} class="relative z-20 w-full h-full object-contain">
+                            <div class="absolute top-0 mt-2 break-keep px-2 text-zinc-500 leading-5">
+                                <p class="">{@html promo.details}</p>
+                            </div>
+                        </div>
+                    </SplideSlide>
+                {/each}
+            </SplideTrack>
             
-        </SplideTrack>
         </Splide>
 </div>

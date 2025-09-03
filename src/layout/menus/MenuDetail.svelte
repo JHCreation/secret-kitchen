@@ -37,13 +37,14 @@
     onSave({cartCurrent: {key, id}, count:1})
     onClose(false)
   }
+  $inspect(data)
 </script>
 
 
 <Dialog.Root open={open} onOpenChange={onClose}>
   
   {#if data}
-  {@const {name, contents, key, imgs, images, type, volume, abv, salePrice, price, priceOption, country, }= data}
+  {@const {name, contents, key, imgs, images, type, type2, volume, abv, salePrice, price, priceOption, country, }= data}
   {@const countryInfo= attemptParse(country)}
   <Dialog.Content class={`sm:max-w-[425px] px-0 py-3 gap-2 ${$cartOpen ? 'opacity-45': ''}`}>
     
@@ -95,6 +96,7 @@
               </Button>
             </div>
             {/if}
+
             <SplideTrack class="">
               {#each images as img}
                 <!-- {@const info= getMenuInfo(key, data)} -->
@@ -121,21 +123,32 @@
               {/each}
             </div>
           {/if}
+          
           <!-- <div class="text-xs md:text-sm font-extrabold leading-3 md:leading-4 mt-1 line-clamp-2">{name}</div> -->
+          
+          <div class="flex flex-col mt-0.5">
+            
 
-          {#if volume || abv }
-            <div class="font-['Wanted_Sans_Variable'] flex items-center mt-0 md:mt-1">
-              {#if volume}
-                <span class="text-3xs md:text-2xs">{volume}</span>
-              {/if}
-              {#if volume && abv}
-                <span class="border-l mx-1 border-slate-400 h-2 block"></span>
-              {/if}
-              {#if abv}
-                <span class="text-3xs md:text-2xs">{abv}</span>
-              {/if}
-            </div>
-          {/if}
+            {#if volume || abv }
+              <div class="font-['Wanted_Sans_Variable'] flex items-center mt-0 md:mt-1">
+                {#if volume}
+                  <span class="text-3xs md:text-2xs">{volume}</span>
+                {/if}
+                {#if volume && abv}
+                  <span class="border-l mx-1 border-slate-400 h-2 block"></span>
+                {/if}
+                {#if abv}
+                  <span class="text-3xs md:text-2xs">{abv}</span>
+                {/if}
+              </div>
+            {/if}
+
+            
+
+            
+          </div>
+
+          
 
           <div class="flex-1 flex ">
             <div class="bg-slate-200 px-2 py-0.5 md:py-1 rounded-lg text-center mt-1 font-[family-name:var(--font-type2)] row-auto">
@@ -162,6 +175,17 @@
 
             </div>
           </div>
+
+          {#if type2 }
+            <div class="overflow-x-auto flex gap-0.5 mt-2">
+              {#each type2 as type2}
+                <!-- <div class={`text-3xs font-medium text-nowrap px-1 py-0 md:py-0.5`}>{type2}</div> -->
+                <Badge
+                  variant={'secondary'} 
+                  class={`text-2xs leading-3   font-medium text-nowrap px-2 py-0 md:py-0.5`}>{type2}</Badge>
+              {/each}
+            </div>
+          {/if}
         </div>
 
         <div class="text-xs mt-4 font-[family-name:var(--font-type2)]">
