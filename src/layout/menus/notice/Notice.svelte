@@ -1,12 +1,9 @@
 <script lang="ts">
   import * as Accordion from "$lib/components/ui/accordion/index.js";
   const notice= [
+    { msg: '음식과 주류 주문 필수입니다.' },
     { msg: '물, 냅킨, 물티슈는 셀프로 이용 부탁드립니다.' },
     { msg: '드시다가 남은 모든 주류는 포장 가능합니다.' },
-    // { msg: '기본적으로 잔 교체가 되지 않습니다. 양해 부탁드립니다.', detail: ['다음 드실 주류(와인,맥주)나 물로 린싱 추천드립니다'] },
-    // { msg: '바틀 테이크아웃시 할인 적용됩니다.', detail: ['와인 -8,000 / 맥주 -1,500 / 위스키 -25,000'] },
-    // { msg: '웨이팅시 이용시간을 3시간으로 제한합니다.', detail: '' },
-    
     { msg: '대기 손님이 있을때, 2시간으로 이용시간 제한이 있습니다.' },
     { msg: '외부음식 반입 불가 입니다. ' },
     { 
@@ -113,14 +110,14 @@
     </div>
   </div>
 
-  <div class="md:border rounded-lg flex-1 py-5 px-5">
+  <div class="md:border rounded-lg flex-1 py-5 px-5 pt-0 md:pt-5">
     {@render name('안내사항')}
-    <ul class="py-1 list-[upper-roman]">
+    <ul class="py-1">
       {#each notice as notice, i}
-        <li class="py-0 flex">
+        <li class="py-0.5 flex">
           
           <!-- <Check size={14} class="text-red-500 mt-0. mr-1"/> -->
-          <div class="leading-5 py-1">
+          <div class="leading-5">
             {#if notice?.type == 'accordion'}
               <Accordion.Root type="single" class="">
                 <Accordion.Item value="item-1" class="border-0" >
