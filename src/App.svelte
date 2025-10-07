@@ -22,6 +22,7 @@
     import { getSaleDate, stringToBoolean } from "./layout/stores-utils.svelte";
     import Cocktail from "./routes/Cocktail.svelte";
 	import { appRoutes } from "./routes/_routes";
+    import NavBar from "./layout/nav/NavBar.svelte";
 
 	
   	let url= '';
@@ -100,6 +101,7 @@
 	}}
 >
 	<Nav/>
+	<NavBar/>
 	{#if loading}
 		<div class="w-full min-h-[calc(100dvh-61px)] flex items-center justify-center">
 			<div class="w-24 fill-c1">

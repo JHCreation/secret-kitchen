@@ -32,9 +32,9 @@
 
 <MenuWrap>
 
-<div class="w-full max-w-28 md:max-w-40 mx-auto">
+<!-- <div class="w-full max-w-28 md:max-w-40 mx-auto">
   <img src={Logo} alt="">
-</div>
+</div> -->
 <div class="px-1">
   <Notice />
   <Promotion />
