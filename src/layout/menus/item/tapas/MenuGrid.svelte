@@ -16,7 +16,6 @@
     salad: '샐러드',
     dessert: '디저트',
   }
-  
   $inspect($menuState, list, sortList)
 </script>
 
