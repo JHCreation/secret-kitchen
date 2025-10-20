@@ -11,7 +11,7 @@
   let grid= $state(4)
   const category ={
     main: '메인',
-    pasta: '파스타',
+    pasta: '파스타/리소토',
     side: '사이드',
     salad: '샐러드',
     dessert: '디저트',

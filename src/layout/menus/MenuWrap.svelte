@@ -24,8 +24,8 @@
 
 
 
-<div class={cn("mt-8 pb-20 md:mt-20 mx-0.5", {
-  "pt-2 md:pt-2": $viewWidget,
+<div class={cn("pb-20 mt-[57px] mx-0.5 pt-2", {
+  "pt-10": $viewWidget,
 })}>
   {@render children?.()}
 </div>

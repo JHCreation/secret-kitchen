@@ -99,7 +99,7 @@
   // "top-10": $viewWidget,
 })}>
 <Select.Root type="single" onValueChange={(value) => setLanguage(value)} bind:value={language} >
-  <Select.Trigger class="w-[120px] notranslate bg-white">{triggerContent || "Select a language"}</Select.Trigger>
+  <Select.Trigger class="w-[120px] notranslate bg-white">{triggerContent}</Select.Trigger>
   <Select.Content class="">
     <Select.Group>
       <!-- <Select.Label class="">언어</Select.Label> -->
