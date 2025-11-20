@@ -59,13 +59,14 @@ const fetchMenu= async ()=> {
   const random:any= {}
   Object.keys(data).map(key=> {
     const info= data[key].map(d=> getMenuInfo(key, d) )
-    if( key == 'tapas' ) random[key]= info
+    
     if( key == 'liqueur' ) {
       console.log('liqueur', info)
       const [drinkItems, otherItems] = _.partition(info, item => item.name.includes('[음료]'));
       console.log('drinkItems', drinkItems, otherItems)
       random[key]= [..._.shuffle(otherItems), ..._.shuffle(drinkItems)]
     }
+    else if( key == 'tapas' ) random[key]= info
     else random[key]= _.shuffle(info)
     // console.log('info', data[key], info)
     // if( key == 'tapas' ) random[key]= data[key]
