@@ -2,9 +2,10 @@ import { writable, derived } from 'svelte/store';
 // import { useLocation } from 'svelte-routing';
 import _ from 'lodash'
 import Cookies from 'js-cookie'
-import { getMenuInfo } from './menus/menu';
+import { category, getMenuInfo } from './menus/menu';
 import { countryNames } from '~/components/utils/countryNames';
 import { attemptParse } from '~/components/utils/util';
+
 // import queryString from "query-string";
 
 export const bottomNavEl= writable(null)
@@ -59,14 +60,15 @@ const fetchMenu= async ()=> {
   const random:any= {}
   Object.keys(data).map(key=> {
     const info= data[key].map(d=> getMenuInfo(key, d) )
-    
     if( key == 'liqueur' ) {
-      console.log('liqueur', info)
       const [drinkItems, otherItems] = _.partition(info, item => item.name.includes('[음료]'));
-      console.log('drinkItems', drinkItems, otherItems)
       random[key]= [..._.shuffle(otherItems), ..._.shuffle(drinkItems)]
     }
-    else if( key == 'tapas' ) random[key]= info
+    else if( key == 'tapas' ) {
+      random[key]= _.sortBy(info, (item,i) => {
+        return Object.keys(category).indexOf(item.type1[0])
+      })
+    }
     else random[key]= _.shuffle(info)
     // console.log('info', data[key], info)
     // if( key == 'tapas' ) random[key]= data[key]

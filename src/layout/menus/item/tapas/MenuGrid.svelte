@@ -4,18 +4,12 @@
   import Item from "./Item.svelte";
   import _ from "lodash";
   import clsx from 'clsx';
-    import { CircleAlert } from "lucide-svelte";
+  import { CircleAlert } from "lucide-svelte";
+  import { category } from "../../menu";
   
   let { id, list }= $props()
   let sortList= $derived(_.groupBy(list, 'type1'))
   let grid= $state(4)
-  const category ={
-    main: '메인',
-    pasta: '파스타/리소토',
-    side: '사이드',
-    salad: '샐러드',
-    dessert: '디저트',
-  }
   $inspect('tapas menu grid:', $menuState, list, sortList)
 </script>
 
