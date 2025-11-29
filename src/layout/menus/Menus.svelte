@@ -37,7 +37,7 @@
 </div> -->
 <div class="px-1">
   <Notice />
-  <Promotion />
+  <!-- <Promotion /> -->
   
   <div class="mt-4">
     {#if $menuState}
