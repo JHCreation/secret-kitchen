@@ -42,6 +42,7 @@
   <div class="mt-4">
     {#if $menuState}
       {#each Object.keys(menuType) as key}
+        {#if $menuState[key].length > 0 }
         <div class="py-10">
           <div class="flex items-end ">
             <div class="leading-5 font-[family-name:var(--font-type-en)] text-4xl md:text-6xl">{menuType[key].name}</div>
@@ -102,6 +103,7 @@
             </SplideTrack>
           </Splide>
         </div>
+        {/if}
         
       {/each}
     {:else}
