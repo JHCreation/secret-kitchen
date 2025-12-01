@@ -74,14 +74,16 @@
       </Link>
     </div>
     {#each Object.keys(menuType) as key}
-      {@const Icon= menuType[key].icon}
-      <div class="flex items-center justify-center">
-        <Link to={`/menus${menuType[key].link}`} class="py-2.5 px-3" preserveScroll>
-          <div class={`${iconSize}`}>
-            <Icon class="w-full h-full text-slate-100"/>
-          </div>
-        </Link>
-      </div>
+      {#if $menuState && $menuState[key].length > 0 }
+        {@const Icon= menuType[key].icon}
+        <div class="flex items-center justify-center">
+          <Link to={`/menus${menuType[key].link}`} class="py-2.5 px-3" preserveScroll>
+            <div class={`${iconSize}`}>
+              <Icon class="w-full h-full text-slate-100"/>
+            </div>
+          </Link>
+        </div>
+      {/if}
     {/each}
 
     {#if $tableId}
