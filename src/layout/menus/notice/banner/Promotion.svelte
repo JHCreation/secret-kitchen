@@ -47,7 +47,6 @@
             {/if}
         </div>
         {#if promo.component}
-        
             <div class="mt-2">
                 <svelte:component this={promo.component} />
             </div>
