@@ -4,15 +4,24 @@
     import { MoveLeft } from "lucide-svelte";
     import { Button } from "~/lib/components/ui/button/index.js";
     import { cn } from "~/lib/utils";
-    import Promotion1 from "~/assets/promotion/promotion-1.webp";
+    import Promotion1 from "~/assets/promotion/christmas2025.webp";
     import Promotion2 from "~/assets/promotion/promotion-2.webp";
     import Promotion3 from "~/assets/promotion/promotion-3.jpg";
-
-    const promotions= [
+    import Christmas from "./Christmas.svelte";
+    type Promo= {
+        img: string,
+        alt: string,
+        details?: string,
+        link?: string,
+        component?: any,
+    }
+    const promotions: Promo[] = [
         // { img: Promotion1, alt: "Promotion Banner 1" },
         { 
-            img: Promotion2, alt: "건대 시크릿키친 콜키지 프리",
-            details: "광진구 건대 시크릿키친 콜키지 프리 이벤트!<br>콜키지 무료 혜택을 놓치지 마세요!" 
+            img: Promotion1, alt: "Christmas in Secret Kitchen",
+            // details: "광진구 건대 시크릿키친 콜키지 프리 이벤트!<br>콜키지 무료 혜택을 놓치지 마세요!",
+            link: 'https://naver.me/xKEUzEjM',
+            component: Christmas,
         },
         // { img: Promotion3, alt: "Promotion Banner 3" },
     ];
@@ -25,6 +34,24 @@
     <Button size={'sm'} class={cn("pointer-events-auto bg-white/20 border-slate-600- border- text-slate-600 hover:text-slate-200 p-1.5 md:p-2.5 h-auto touch-manipulation size-8 [&_svg]:size-6 ", className)} >
         <Icon strokeWidth={1}/>
     </Button>
+{/snippet}
+
+{#snippet content(promo)}
+    <div class="">
+        <div class="rounded-xl overflow-hidden ">
+            <img src={promo.img} alt={promo.alt} class="relative z-20 w-full h-full object-cover">
+            {#if promo?.details}
+                <div class="mt-2 break-keep px-2 text-zinc-500 leading-5">
+                    <p class="">{@html promo.details}</p>
+                </div>
+            {/if}
+        </div>
+        {#if promo.component}
+            <div class="mt-2">
+                <svelte:component this={promo.component} />
+            </div>
+        {/if}
+    </div>
 {/snippet}
 
 <div class="relative w-full max-w-container-sm mx-auto">
@@ -82,12 +109,7 @@
             <SplideTrack class="mt-2">
                 {#each promotions as promo}
                     <SplideSlide class="flex">
-                        <div class="rounded-xl overflow-hidden ">
-                            <img src={promo.img} alt={promo.alt} class="relative z-20 w-full h-full object-contain">
-                            <div class="absolute top-0 mt-2 break-keep px-2 text-zinc-500 leading-5">
-                                <p class="">{@html promo.details}</p>
-                            </div>
-                        </div>
+                    {@render content(promo)}
                     </SplideSlide>
                 {/each}
             </SplideTrack>

@@ -1,8 +1,10 @@
 <script lang="ts">
     import { setContext } from "svelte";
     import RegisterIndex from "~/layout/reviewers/RegisterIndex.svelte";
-    const { events, events_info } = $props();
-    setContext('events', { events, events_info});
+    import { reviewers_info } from "~/layout/reviewers/schema/events";
+
+    // const { events, events_info } = $props();
+    setContext('events', { events_info: reviewers_info});
 
 </script>
 

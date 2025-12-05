@@ -23,7 +23,9 @@ export const appRoutes = [
   { path: "/menus/tapas", component: Tapas },
   { path: "/menus/cocktail", component: Cocktail },
   { path: "/reviewers/register", component: Reviewers,
-    props: (params)=> ({ events_info: reviewers_info })
+    // props: (params)=> ({ events_info: reviewers_info })
    },
-  { path: "/reviewers/register-event", component: ReviewersEvent, props: (params)=> ({ events: events, events_info }) },
+  { path: "/reviewers/register-event", component: ReviewersEvent, 
+    // props: (params)=> ({ events: events, events_info }) 
+  },
 ];
