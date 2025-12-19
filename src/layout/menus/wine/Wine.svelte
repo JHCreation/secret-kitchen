@@ -127,7 +127,7 @@
     <ItemNotice notice={notice}/>
     
   </div>
-  <div class="sticky top-2 left-0 px-0 z-10">
+  <div class="sticky top-14 left-0 px-0 z-10">
           
     <ScrollArea
       class="w-full whitespace-nowrap mb-0 "
