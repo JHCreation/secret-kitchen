@@ -17,11 +17,14 @@
     }
     const promotions: Promo[] = [
         // { img: Promotion1, alt: "Promotion Banner 1" },
+        // { 
+        //     img: Promotion1, alt: "Christmas in Secret Kitchen",
+        //     link: 'https://naver.me/xKEUzEjM',
+        //     component: Christmas,
+        // },
         { 
-            img: Promotion1, alt: "Christmas in Secret Kitchen",
+            img: Promotion2, alt: "Corckage Free Event" 
             // details: "광진구 건대 시크릿키친 콜키지 프리 이벤트!<br>콜키지 무료 혜택을 놓치지 마세요!",
-            link: 'https://naver.me/xKEUzEjM',
-            component: Christmas,
         },
         // { img: Promotion3, alt: "Promotion Banner 3" },
     ];
